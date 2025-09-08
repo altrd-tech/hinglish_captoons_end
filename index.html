@@ -1,23 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hinglish Captions - Band Hai!</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hinglish Captions — Private</title>
+  <meta name="description" content="Hinglish caption generator is now private / invite-only." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --page-black: #212121; /* absolute black requested */
+      --glass-alpha: 0.48;
+      --text: #f2f2f2;
+      --muted: #cfcfcf;
+      --g1: #9b5cff; /* purple */
+      --g2: #6fc8ff; /* blue */
+      --g3: #d49bff; /* lighter purple */
+      --radius: 22px;
+      --shadow: 0 10px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:var(--text);
+      display:grid;place-items:center;overflow:hidden;
+      background: url(./bg.jpeg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .container{
+      width:min(880px,94vw);padding:28px;
+      border-radius:20px;
+      position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
+      backdrop-filter: blur(10px) saturate(115%);-webkit-backdrop-filter: blur(10px) saturate(115%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.06);
+      box-shadow:var(--shadow);
+    }
+
+    .banner{
+      width:100%;background: linear-gradient(180deg, rgba(0,0,0,var(--glass-alpha)), rgba(0,0,0,0.36));
+      padding:20px 22px;border-radius:20px;border:1px solid rgba(255,255,255,0.04);
+      display:flex;align-items:center;justify-content:center;text-align:center;
+    }
+
+    .headline{margin:0;font-weight:600;line-height:1.2;font-size:clamp(18px,3vw,26px);color:var(--text)}
+
+    .headline .emph{
+      background: linear-gradient(90deg, var(--g1), var(--g3), var(--g2));
+      -webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;
+      filter:brightness(1.35) contrast(1.1);
+    }
+
+    .subtle{margin:14px 8px 6px;font-weight:300;color:var(--muted);font-size:14px;display:flex;gap:10px;align-items:center;justify-content:center}
+    .subtle a{color:var(--text);text-decoration:none;border-bottom:1px dashed rgba(255,255,255,0.16);padding-bottom:1px;display:inline-flex;align-items:center;gap:8px}
+    .subtle a:hover{opacity:0.9;transform:translateY(-1px)}
+
+    .arrow{display:inline-block;transform:translateY(1px)}
+
+    footer{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:3;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(6px);font-size:12px;color:rgba(255,255,255,0.9)}
+
+    @media(max-width:520px){.shape{display:none}.container{padding:20px}.banner{padding:14px}}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <h1><span class="highlight">Hinglish Captions</span></h1>
-            <div class="emoji">😅</div>
-            <h2>Yeh App Toh Band Ho Gaya Yaar!</h2>
-            <p>Picture abhi baaki hai mere dost... lekin yeh service ka "The End" ho gaya!</p>
-            <div class="message">
-                <p>Thanks for all the love! ❤️</p>
-            </div>
-        </div>
+  <!-- Decorative gradient shapes on absolute black -->
+
+  <main class="container" role="main" aria-labelledby="notice">
+    <div class="banner" id="notice">
+      <h1 class="headline"><span class="emph">captions</span> abhi baaki hai… par sirf hamare liye</h1>
     </div>
-    <script src="script.js"></script>
+
+    <p class="subtle">
+      We can still deploy it for editing houses internally —
+      <a href="mailto:workwithus@altrdtech.com" aria-label="Contact us via email">contact <span class="arrow">→</span></a>
+    </p>
+  </main>
+
+  <footer>hinglishcaptions.com</footer>
 </body>
 </html>
